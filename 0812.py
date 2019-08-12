@@ -72,3 +72,8 @@ print 'a' in s
 #  遍历set的元素
 for name in s:
 	print name
+# 更新set
+s.add('E')
+print '添加E之后打印s',s
+s.remove('D')
+print '删除D之后打印s',s
