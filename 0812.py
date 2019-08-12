@@ -165,3 +165,31 @@ def firstCharUpper(s):
 print firstCharUpper('hello')
 print firstCharUpper('sunday')
 print firstCharUpper('september')
+
+# 迭代
+for i in range(1,101):
+	if(i%7==0):
+		print i
+# 索引迭代
+list_3 = ['Adam', 'Lisa', 'Bart', 'Paul']
+for index, name in enumerate(list_3):
+	print index+1, '-', name
+
+# 迭代dict的value
+d_1 = {
+	'Adam':95,
+	'Lisa':85,
+	'Bart':98,
+	'Paul':64
+}
+sum_1 = 0.0
+for num in d_1.itervalues():
+	sum_1 = sum_1 + num
+print sum_1/len(d_1)
+
+# 迭代dict的value和key
+sum_2 = 0.0
+for k, v in d_1.iteritems():
+	sum_2 = sum_2 + v
+	print k, ':', v
+print 'average', ':', sum_2/len(d_1)
