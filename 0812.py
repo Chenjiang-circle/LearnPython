@@ -148,3 +148,20 @@ def average(*args):
 print average()
 print average(1, 2)
 print average(1, 2, 2, 3, 4)
+
+# 对list进行切片
+list_1 = range(1, 101)
+print list_1[0:10]
+print list_1[2:101:3] #每三个取一个
+print list_1[4:50:5] #不大于50的5的倍数
+
+# 对list进行倒序切片
+list_2 = range(1, 101)
+print list_2[-10:] #打印最后10个
+print list_2[4::5][-10:] #最后10个 5的倍数，需要现将5的倍数找出来，再将倒数10个找出来。（多次切片）
+# 对字符串进行切片操作更对list操作一样
+def firstCharUpper(s):
+	return s[:1].upper()+s[-len(s)+1:]
+print firstCharUpper('hello')
+print firstCharUpper('sunday')
+print firstCharUpper('september')
