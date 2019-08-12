@@ -193,3 +193,14 @@ for k, v in d_1.iteritems():
 	sum_2 = sum_2 + v
 	print k, ':', v
 print 'average', ':', sum_2/len(d_1)
+
+# 列表生成式
+print [x*(x+1) for x in range(1, 101, 2)]
+
+# 条件过滤
+def toUppers(L):
+	return [x.upper() for x in L if isinstance(x, str)]
+print toUppers(['Hello', 'world', 101])
+
+# 多层表达式
+print [str(a)+str(b)+str(c) for a in range(1, 10) for b in range(0, 10) for c in range(0, 10) if a==c]
