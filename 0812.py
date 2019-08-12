@@ -1,39 +1,40 @@
-﻿print '你好'
+﻿import math
+print '你好'
 # for循环
 L = [75, 92, 59, 68]
-sum = 0.0
-for num in L:
-	print num
+#sum = 0.0
+#for num in L:
+	#print num
 
 # while循环
-N = 10
-x = 0
-while x < N:
-	print x
-	x = x + 1
+#N = 10
+#x = 0
+#while x < N:
+	#print x
+	#x = x + 1
 
 # break退出循环
-print 'break退出循环++++++++'
-sum = 0
-x = 1
-while True:
-	sum = sum + x
-	x= x + 1
-	if x > 100:
-		break
-print sum
-print 'break退出循环--------'
+#print 'break退出循环++++++++'
+#sum = 0
+#x = 1
+#while True:
+	#sum = sum + x
+	#x= x + 1
+	#if x > 100:
+		#break
+#print sum
+#print 'break退出循环--------'
 
 # continue继续循环
-L = [75, 98, 59, 81, 66, 43, 69, 85]
-sum = 0.0
-n = 0
-for x in L:
-	if  x < 60:
-		continue
-	sum = sum + x
-	n = n + 1
-print sum
+#L = [75, 98, 59, 81, 66, 43, 69, 85]
+#sum = 0.0
+#n = 0
+#for x in L:
+	#if  x < 60:
+		#continue
+	#sum = sum + x
+	#n = n + 1
+#print sum
 
 # 多重循环
 for x in ['A', 'B', 'C', 'D']:
@@ -73,7 +74,77 @@ print 'a' in s
 for name in s:
 	print name
 # 更新set
+
 s.add('E')
 print '添加E之后打印s',s
 s.remove('D')
 print '删除D之后打印s',s
+
+# 函数调用
+print abs(6.9)
+print str(123)
+print str(1.23)
+print '你好'
+L1 = []
+for b in range(0, 101):
+	a = b * 2
+	L1.append(a)
+print sum(L1)
+# 比较函数
+print cmp(1, 2)
+
+# 自定义函数
+def square_of_sum(L):
+	a = 0.0
+	for b in L:
+		a = a + b * b
+	return a
+print square_of_sum([1, 2, 3, 4, 5])
+
+# 计算一元二次方程的解
+def quadratic_equation(a, b, c):
+	de = b**2-4*a*c
+	if de >= 0:
+		x1 = (-b + math.sqrt(de))/(2*a)
+		x2 = (-b - math.sqrt(de))/(2*a)
+		return x1, x2
+	else:
+		return
+
+print quadratic_equation(2, 3, 0)
+
+# 递归函数
+def fact(n):
+	if n==1:
+		return 1
+	return n * fact(n-1)
+
+print fact(10)
+
+# 汉诺塔
+# move(n, a, b, c)表示的是有n个盘子在a柱子上，将要移到c柱子上面去
+def move(n, a, b, c):
+	if n == 1:
+		print a,'-->',c
+		return
+	move(n-1, a, c, b)
+	print a, '-->', c
+	move(n-1, b, a, c)
+
+move(4, 'A', 'B', 'C')
+
+# 设定默认参数 由于函数的参数按从左到右的顺序匹配，所以默认参数只能定义在必须参数的后面
+def greet(s = 'world'):
+	print 'Hello', s
+greet()
+greet('Da')
+
+# 定义可变参数
+def average(*args):
+	if len(args) != 0:
+		return sum(args)*1.0/len(args)
+	else:
+		return 0.0
+print average()
+print average(1, 2)
+print average(1, 2, 2, 3, 4)
