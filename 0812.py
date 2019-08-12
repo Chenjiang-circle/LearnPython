@@ -69,3 +69,6 @@ print 's的长度是', len(s)
 
 # 使用in来判断某一元素是不是在set中
 print 'a' in s
+#  遍历set的元素
+for name in s:
+	print name
