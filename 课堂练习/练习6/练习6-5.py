@@ -2,16 +2,19 @@ import random
 
 
 def prodfuctBirthday():
-    mouth = random.randint(1, 12)
-    days = 0
-    if mouth in [1, 3, 5, 7, 8, 10, 12]:
-        days = random.randint(1, 31)
-    elif mouth in [4, 6, 9, 11]:
-        days = random.randint(1, 30)
-    else:
-        days = random.randint(28, 29)
-
-    return mouth, days
+    # 没必要生成月和日,一年就365天,在1到365中,随机生成一个数就可以了
+    # mouth = random.randint(1, 12)
+    # days = 0
+    # if mouth in [1, 3, 5, 7, 8, 10, 12]:
+    #     days = random.randint(1, 31)
+    # elif mouth in [4, 6, 9, 11]:
+    #     days = random.randint(1, 30)
+    # else:
+    #     days = random.randint(0, 29)
+    #
+    # return mouth, days
+    day = random.randint(1, 365)
+    return day
 
 def haveSame(L):
     L = list(L)
@@ -31,6 +34,6 @@ for i in range(trys):
         hits = hits + 1
     else:
         hits = hits
-    print(L)
+    # print(L)
 
 print(hits/trys)
